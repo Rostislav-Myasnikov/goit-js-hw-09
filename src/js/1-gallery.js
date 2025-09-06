@@ -86,29 +86,11 @@ const imgMarkup = images
   )
   .join('');
 
-gallery.innerHTML = imgMarkup;
+gallery.insertAdjacentHTML('beforeend', imgMarkup);
 
-const galleryItem = gallery.querySelectorAll('.gallery-item');
-galleryItem.forEach(item => {
-  item.style.width = 'calc((100% - 48px) / 3)';
-  item.style.boxSizing = 'border-box';
-  item.style.maxHeight = '200px';
-  item.style.maxWidth = '360px';
+new SimpleLightbox('.gallery a', {
+  showContainer: false,
+  loop: false,
+  captionsData: 'alt',
+  captionsDelay: 250,
 });
-
-const galleryImg = gallery.querySelectorAll('.gallery-image');
-galleryImg.forEach(img => {
-  img.style.width = '100%';
-  img.style.height = '100%';
-  img.style.display = 'block';
-});
-
-gallery.addEventListener('click', onClick);
-
-function onClick(e) {
-  e.preventDefault();
-  if (e.target.nodeName !== 'IMG') {
-    return;
-  }
-}
-new SimpleLightbox('.gallery a', { loop: false });
