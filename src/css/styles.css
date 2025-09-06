@@ -36,3 +36,16 @@
 .gallery-image:active {
   transform: scale(1.04);
 }
+
+.feedback-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  justify-content: center;
+  align-items: center;
+}
+
+.feedback-form button {
+  width: 200px;
+  margin: auto;
+}

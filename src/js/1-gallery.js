@@ -107,9 +107,8 @@ gallery.addEventListener('click', onClick);
 
 function onClick(e) {
   e.preventDefault();
-  const mainImage = e.target.dataset.source;
   if (e.target.nodeName !== 'IMG') {
     return;
   }
-  new SimpleLightbox('.gallery a', { loop: false });
 }
+new SimpleLightbox('.gallery a', { loop: false });
